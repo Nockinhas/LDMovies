@@ -1,5 +1,5 @@
 *{
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     border: none;
 }
@@ -39,7 +39,7 @@ input{
 }
 
 #register, #login{
-    font-family: "Roboto Medium";
+    font-family: "Roboto Medium", sans-serif;
 }
 
 #login{
