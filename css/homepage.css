@@ -47,7 +47,7 @@
 /* TÍTULO FILMES + LISTAGEM */
 
 #list, h2{
-    margin-top: -80px;
+    margin-top: -70px;
     position: absolute;
 }
 
@@ -64,7 +64,7 @@ h2{
 
 .grid{
     margin-left: 15%;
-    margin-top: 550px;
+    margin-top: 500px;
     grid-template-columns: repeat(auto-fit, 15rem);
     width: 70%;
 }
