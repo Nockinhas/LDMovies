@@ -1,90 +1,53 @@
-/* HEADER */
 
-.horizontal_bar{
-    top: 20px;
-}
-
-#logo{
-    text-decoration: none;
-    font-family:"Roboto Medium", sans-serif;
-    color: black;
-    font-size: 25px;
-    margin-left: 3%;
-}
-
-#options{
-    right: 30px;
-    position: absolute;
-}
-
-#notification{
-    position: absolute;
-    right: 80px;
-}
-
-#barra_de_pesquisa{
-    position: absolute;
-    left: 37%;
-    top: 2%;
-}
-
-#lupa{
-    position: absolute;
-    right: 15px;
-    top: 3px
-}
-
-#menu{
-    margin-left: 30px;
-}
-
-#cover{
-    margin-top: 3%;
-}
-
-
-/* TÍTULO FILMES + LISTAGEM */
-
-.filmesList{
-    margin-top: 80px;
-    position: absolute;
-
-    #list{
-        margin-left:78%;
+.homepage {
+    /* TÍTULO FILMES + LISTAGEM */
+    &-list {
+        margin-top: 80px;
+        margin-left: 78%;
+        position: absolute;
     }
 
-    h2{
+    &-títuloFilmes{
+        margin-top: 80px;
         margin-left: 18%;
+        position: absolute;
     }
-}
 
 
-/* MAIN */
+    /* MAIN */
 
-.grid{
-    margin-left: 15%;
-    margin-top: 150px;
-    grid-template-columns: repeat(auto-fit, 15rem);
-    width: 70%;
-}
+    &-grid{
+        margin-left: 15%;
+        margin-top: 150px;
+        grid-template-columns: repeat(auto-fit, 15rem);
+        width: 70%;
+        display: grid;
 
+        &-container {
+            position: relative;
 
-/* CARDS */
+            /* CARDS */
 
-.card{
-    width: 90%;
-}
+            .card{
+                width: 90%;
 
-.card img{
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-    margin-top: 30px;
-}
-
-.information h3, h4, h5{
-    margin-bottom: 0;
-    margin-top: 5px;
-}
-
-.information h5, h4{
-    font-family: "Roboto Light";
+                img{
+                    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+                    margin-top: 30px;
+                }
+        
+                &-information {
+                    
+                    h3, h4, h5{
+                        margin-bottom: 0;
+                        margin-top: 5px;
+                    }
+            
+                    h5, h4{
+                        font-family: "Roboto Light";
+                    }
+                }
+            }
+        }
+    }
 }

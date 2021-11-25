@@ -4,7 +4,7 @@
     top: 20px;
 }
 
-#logo{
+.logo{
     text-decoration: none;
     font-family:"Roboto Medium", sans-serif;
     color: black;
@@ -12,51 +12,51 @@
     margin-left: 3%;
 }
 
-#options{
+.options{
     top: 2%;
     right: 30px;
     position: absolute;
 }
 
-#notification{
+.notification{
     top: 2%;
     position: absolute;
     right: 80px;
 }
 
-#barra_de_pesquisa{
+.barra_de_pesquisa{
     position: absolute;
     left: 37%;
     top: 2%;
 }
 
-#lupa{
+.lupa{
     position: absolute;
     right: 15px;
     top: 3px
 }
 
-#menu{
+.menu{
     margin-left: 30px;
 }
 
-#cover{
+.cover{
     margin-top: 3%;
 }
 
 
 /* TÍTULO FILMES + LISTAGEM */
 
-#list, #títuloFilmes{
+.list, .títuloFilmes{
     margin-top: 80px;
     position: absolute;
 }
 
-#list{
+.list{
     margin-left: 78%;
 }
 
-#títuloFilmes{
+.títuloFilmes{
     margin-left: 18%;
 }
 
