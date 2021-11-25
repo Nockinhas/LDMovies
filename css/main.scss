@@ -1,4 +1,3 @@
-@import 'config';
 $primaryBlue: #06A5E9;
 
 *{
@@ -56,4 +55,6 @@ input{
     background-color: black;
 }
 
-
+@import 'home';
+@import 'config';
+@import 'compra';
