@@ -1,46 +1,68 @@
 @charset "UTF-8";
 * {
   font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: none;
   text-align: left;
 }
 
-.login-grid {
-  margin-top: 10%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 38rem);
-  grid-gap: 50px;
-  justify-content: center;
-}
-.login-container {
-  position: relative;
-}
-.login-container h1 {
-  font-size: 120px;
-}
-.login-container .form {
-  font-size: 30px;
-}
-.login-container input {
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+input {
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
+
+.login-grid {
+  margin-top: 10%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (38rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 38rem);
+  grid-gap: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-container {
+  position: relative;
+}
+
+.login-container h1 {
+  font-size: 120px;
+}
+
+.login-container .form {
+  font-size: 30px;
+}
+
+.login-container input {
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 30px;
+}
+
 .login-container #username, .login-container #password {
   padding-left: 3%;
 }
+
 .login-container #password {
   margin-top: 15px;
 }
+
 .login-container #register, .login-container #login {
   font-family: "Roboto Medium", sans-serif;
 }
+
 .login-container #login {
   margin-top: 5%;
   color: white;
   background-color: #06A5E9;
 }
+
 .login-container #register {
   color: white;
   background-color: black;
@@ -50,6 +72,7 @@
 .horizontal_bar {
   top: 20px;
 }
+
 .horizontal_bar .logo {
   text-decoration: none;
   font-family: "Roboto Medium", sans-serif;
@@ -57,34 +80,42 @@
   font-size: 25px;
   margin-left: 3%;
 }
+
 .horizontal_bar .options {
   top: 2%;
   right: 30px;
   position: absolute;
 }
+
 .horizontal_bar .notification {
   top: 2%;
   position: absolute;
   right: 80px;
 }
+
 .horizontal_bar .barra_de_pesquisa {
   position: absolute;
   left: 37%;
   top: 2%;
 }
+
 .horizontal_bar .barra_de_pesquisa input {
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
+
 .horizontal_bar .lupa {
   position: absolute;
   right: 15px;
   top: 3px;
 }
+
 .horizontal_bar .menu {
   margin-left: 30px;
 }
+
 .horizontal_bar .cover {
   margin-top: 3%;
 }
@@ -93,49 +124,94 @@
   /* TÍTULO FILMES + LISTAGEM */
   /* MAIN */
 }
+
 .homepage-list {
   margin-top: 80px;
   margin-left: 78%;
   position: absolute;
 }
+
 .homepage-títuloFilmes {
   margin-top: 80px;
   margin-left: 18%;
   position: absolute;
 }
+
 .homepage-grid {
   margin-left: 15%;
   margin-top: 150px;
-  grid-template-columns: repeat(auto-fit, 15rem);
+  -ms-grid-columns: (15rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 15rem);
   width: 70%;
+  display: -ms-grid;
   display: grid;
 }
+
 .homepage-grid-container {
   position: relative;
   /* CARDS */
 }
+
 .homepage-grid-container .card {
   width: 90%;
 }
+
 .homepage-grid-container .card img {
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   margin-top: 30px;
 }
+
 .homepage-grid-container .card-information h3, .homepage-grid-container .card-information h4, .homepage-grid-container .card-information h5 {
   margin-bottom: 0;
   margin-top: 5px;
 }
+
 .homepage-grid-container .card-information h5, .homepage-grid-container .card-information h4 {
   font-family: "Roboto Light";
 }
 
-.grid {
-  grid-template-columns: repeat(auto-fit, 72rem);
-}
-
-.information {
+.container-information {
   width: 20%;
   display: inline;
   position: absolute;
-  margin-left: 10%;
-}/*# sourceMappingURL=main.css.map */
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+div:nth-child(2) > img {
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+div:nth-child(3) > h2 {
+  margin-left: 200px;
+  margin-top: 80px;
+}
+
+div:nth-child(2) > div > h4 {
+  font-family: "Roboto Light";
+  margin-bottom: 0;
+}
+
+div:nth-child(2) > div > h3 {
+  margin-top: 5px;
+}
+
+.purchaseForm {
+  margin-top: 30px;
+  margin-left: 200px;
+}
+
+input {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.finalizar {
+  text-align: center;
+  font-family: "Roboto Medium";
+  background-color: #06A5E9;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

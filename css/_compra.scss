@@ -1,10 +1,44 @@
-.grid{
-    grid-template-columns: repeat(auto-fit, 72rem);
-}
-
-.information{
+.container-information{
     width: 20%;
     display: inline;
     position: absolute;
-    margin-left: 10%;
+    margin-left: 50px;
+    margin-top: 100px;
+    
+}
+
+div:nth-child(2) > img{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+div:nth-child(3) > h2{
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+div:nth-child(2) > div > h4{
+    font-family: "Roboto Light";
+    margin-bottom: 0;
+}
+
+div:nth-child(2) > div > h3{
+    margin-top: 5px;
+}
+
+.purchaseForm{
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+input{
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.finalizar{
+    text-align: center;
+    font-family: "Roboto Medium";
+    background-color: $primaryBlue;
+    color: white;
 }

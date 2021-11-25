@@ -8,25 +8,41 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="horizontal_bar" width="100%">
-        <img src="images/menu.png" alt="menu" id="menu" width="25px" height="auto">
-        <a id="logo" href="index.html">LDMovies</a>
-        <div id="barra_de_pesquisa">
-            <input type="text" name="search" alt="search" id="search">
-            <img src="images/lupa.png" name="lupa" alt="lupa" id="lupa" width="20px" height="auto">
+    <div class="horizontal_bar">
+        <img src="images/menu.png" alt="menu" class="menu" width="25px" height="auto">
+        <a class="logo" href="index.html">LDMovies</a>
+        <div class="barra_de_pesquisa">
+            <input type="text" name="search" alt="search" class="search">
+            <img src="images/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
         </div>
-        <img src="images/notification.png" alt="notification" id="notification" width="25px" height="auto">
-        <img src="images/options.png" alt="options" id="options" width="22px" height="auto">
-    </div>      
-    <div class="grid">
+        <img src="images/notification.png" alt="notification" class="notification" width="25px" height="auto">
+        <img src="images/options.png" alt="options" class="options" width="22px" height="auto">
+    </div>  
         <div class="container">
-                <img src="images/PF_cover.jpg" alt="PF_cover">
-                <div class="container-information">
-                    <h2>Pulp Fiction</h2> 
-                    <h4>Total</h4> 
-                    <h3><b>1.50€</b></h3> 
-                </div>
+            <img src="images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
+            <div class="container-information">
+                <h2>Pulp Fiction</h2> 
+                <h4>TOTAL</h4> 
+                <h3><b>1.50€</b></h3> 
+            </div>
         </div>
-    </div>
+        <div class="container">
+            <h2>Dados</h2>
+            <div class="purchaseForm">
+                <form name="purchaseForm">
+                    <label for="Endereço">Endereço:</label><br>
+                    <input type="text" class="Endereço" name="Endereço"><br>
+                    <label for="Cartão">Cartão de crédito ou débito:</label><br>
+                    <input type="text" class="Cartão" name="Cartão"><br>
+                    <label for="VCV">VCV:</label><br>
+                    <input type="text" class="VCV" name="VCV"><br>
+                    <label for="Data">Data de Vencimento:</label><br>
+                    <input type="date" class="Data" name="Data"><br>
+                    <label for="PAC">PAC:</label><br>
+                    <input type="text" class="PAC" name="PAC"><br>
+                    <input type="submit" class="finalizar" name="submit" value="Finalizar Compra!" onclick="validar()">
+                </form>
+            </div>
+        </div>
 </body>
 </html>
