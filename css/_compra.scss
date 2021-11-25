@@ -2,6 +2,9 @@
     grid-template-columns: repeat(auto-fit, 72rem);
 }
 
-.card{
-    display: inline-block;
+.information{
+    width: 20%;
+    display: inline;
+    position: absolute;
+    margin-left: 10%;
 }

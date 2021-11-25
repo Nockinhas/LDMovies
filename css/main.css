@@ -1,67 +1,160 @@
-* {
+@charset "UTF-8";
+.login * {
   font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: none;
   text-align: left;
 }
 
-h1 {
+.login h1 {
   font-size: 120px;
 }
 
-.form {
+.login .form {
   font-size: 30px;
 }
 
-.grid {
+.login .grid {
   margin-top: 10%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 38rem);
-  justify-content: center;
+  -ms-grid-columns: (38rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 38rem);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.container {
+.login .container {
   position: relative;
 }
 
-input {
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+.login input {
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
 
-#username, #password {
+.login #username, .login #password {
   padding-left: 3%;
 }
 
-#password {
+.login #password {
   margin-top: 15px;
 }
 
-#register, #login {
+.login #register, .login #login {
   font-family: "Roboto Medium", sans-serif;
 }
 
-#login {
+.login #login {
   margin-top: 5%;
   color: white;
   background-color: #06A5E9;
 }
 
-#register {
+.login #register {
   color: white;
   background-color: black;
 }
 
-a {
+/* HEADER */
+.horizontal_bar {
+  top: 20px;
+}
+
+#logo {
   text-decoration: none;
-  background-color: pink;
+  font-family: "Roboto Medium", sans-serif;
+  color: black;
+  font-size: 25px;
+  margin-left: 3%;
+}
+
+#options {
+  right: 30px;
+  position: absolute;
+}
+
+#notification {
+  position: absolute;
+  right: 80px;
+}
+
+#barra_de_pesquisa {
+  position: absolute;
+  left: 37%;
+  top: 2%;
+}
+
+#lupa {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+}
+
+#menu {
+  margin-left: 30px;
+}
+
+#cover {
+  margin-top: 3%;
+}
+
+/* TÍTULO FILMES + LISTAGEM */
+#list, #títuloFilmes{
+  margin-top: 80px;
+  position: absolute;
+}
+
+#list{
+  margin-left: 78%;
+}
+
+#títuloFilmes{
+  margin-left: 18%;
+}
+
+/* MAIN */
+.grid {
+  margin-left: 15%;
+  margin-top: 150px;
+  -ms-grid-columns: (15rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 15rem);
+  width: 70%;
+}
+
+/* CARDS */
+.card {
+  width: 90%;
+}
+
+.card img {
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+}
+
+.information h3, h4, h5 {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.information h5, h4 {
+  font-family: "Roboto Light";
 }
 
 .grid {
-  grid-template-columns: repeat(auto-fit, 72rem);
+  -ms-grid-columns: (72rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 72rem);
 }
 
-.card {
-  display: inline-block;
-}/*# sourceMappingURL=main.css.map */
+.information {
+  width: 20%;
+  display: inline;
+  position: absolute;
+  margin-left: 10%;
+}
+/*# sourceMappingURL=main.css.map */

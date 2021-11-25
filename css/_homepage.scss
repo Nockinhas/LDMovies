@@ -1,7 +1,6 @@
 /* HEADER */
 
 .horizontal_bar{
-    position: absolute;
     top: 20px;
 }
 
@@ -26,7 +25,7 @@
 #barra_de_pesquisa{
     position: absolute;
     left: 37%;
-    top: 0;
+    top: 2%;
 }
 
 #lupa{
@@ -46,17 +45,17 @@
 
 /* TÍTULO FILMES + LISTAGEM */
 
-#list, h2{
-    margin-top: -70px;
+.filmesList{
+    margin-top: 80px;
     position: absolute;
-}
 
-#list{
-    margin-left: 78%;
-}
+    #list{
+        margin-left:78%;
+    }
 
-h2{
-    margin-left: 18%;
+    h2{
+        margin-left: 18%;
+    }
 }
 
 
@@ -64,7 +63,7 @@ h2{
 
 .grid{
     margin-left: 15%;
-    margin-top: 500px;
+    margin-top: 150px;
     grid-template-columns: repeat(auto-fit, 15rem);
     width: 70%;
 }
