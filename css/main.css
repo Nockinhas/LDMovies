@@ -1,68 +1,52 @@
 @charset "UTF-8";
 * {
   font-family: "Roboto", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: none;
   text-align: left;
 }
 
 input {
-  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
 
 .login-grid {
   margin-top: 10%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (38rem)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 38rem);
+  grid-template-columns: repeat(auto-fit, 38rem);
   grid-gap: 50px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .login-container {
   position: relative;
 }
-
 .login-container h1 {
   font-size: 120px;
 }
-
 .login-container .form {
   font-size: 30px;
 }
-
 .login-container input {
-  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
-
 .login-container #username, .login-container #password {
   padding-left: 3%;
 }
-
 .login-container #password {
   margin-top: 15px;
 }
-
 .login-container #register, .login-container #login {
   font-family: "Roboto Medium", sans-serif;
 }
-
 .login-container #login {
   margin-top: 5%;
   color: white;
   background-color: #06A5E9;
 }
-
 .login-container #register {
   color: white;
   background-color: black;
@@ -72,7 +56,6 @@ input {
 .horizontal_bar {
   top: 20px;
 }
-
 .horizontal_bar .logo {
   text-decoration: none;
   font-family: "Roboto Medium", sans-serif;
@@ -80,42 +63,34 @@ input {
   font-size: 25px;
   margin-left: 3%;
 }
-
 .horizontal_bar .options {
   top: 2%;
   right: 30px;
   position: absolute;
 }
-
 .horizontal_bar .notification {
   top: 2%;
   position: absolute;
   right: 80px;
 }
-
 .horizontal_bar .barra_de_pesquisa {
   position: absolute;
   left: 37%;
   top: 2%;
 }
-
 .horizontal_bar .barra_de_pesquisa input {
-  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 30px;
 }
-
 .horizontal_bar .lupa {
   position: absolute;
   right: 15px;
   top: 3px;
 }
-
 .horizontal_bar .menu {
   margin-left: 30px;
 }
-
 .horizontal_bar .cover {
   margin-top: 3%;
 }
@@ -124,49 +99,38 @@ input {
   /* TÍTULO FILMES + LISTAGEM */
   /* MAIN */
 }
-
 .homepage-list {
   margin-top: 80px;
   margin-left: 78%;
   position: absolute;
 }
-
 .homepage-títuloFilmes {
   margin-top: 80px;
   margin-left: 18%;
   position: absolute;
 }
-
 .homepage-grid {
   margin-left: 15%;
   margin-top: 150px;
-  -ms-grid-columns: (15rem)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 15rem);
-  width: 70%;
-  display: -ms-grid;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  width: 80%;
   display: grid;
 }
-
 .homepage-grid-container {
   position: relative;
   /* CARDS */
 }
-
 .homepage-grid-container .card {
   width: 90%;
 }
-
 .homepage-grid-container .card img {
-  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
   margin-top: 30px;
 }
-
 .homepage-grid-container .card-information h3, .homepage-grid-container .card-information h4, .homepage-grid-container .card-information h5 {
   margin-bottom: 0;
   margin-top: 5px;
 }
-
 .homepage-grid-container .card-information h5, .homepage-grid-container .card-information h4 {
   font-family: "Roboto Light";
 }
@@ -190,7 +154,8 @@ div:nth-child(3) > h2 {
 }
 
 div:nth-child(2) > div > h4 {
-  font-family: "Roboto Light";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  font-family: "Roboto Light", sans-serif;
   margin-bottom: 0;
 }
 
@@ -210,8 +175,32 @@ input {
 
 .finalizar {
   text-align: center;
-  font-family: "Roboto Medium";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  font-family: "Roboto Medium", sans-serif;
   background-color: #06A5E9;
   color: white;
 }
-/*# sourceMappingURL=main.css.map */
+
+.filme-grid {
+  margin-left: 15%;
+  margin-top: 150px;
+  width: 80%;
+  display: grid;
+}
+.filme-grid .container {
+  display: block;
+  position: relative;
+}
+.filme-grid .container .img-grande {
+  width: 100%;
+  height: auto;
+}
+.filme-grid .container-form .bloco {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+.filme-grid .container .coment {
+  width: 100%;
+  height: auto;
+  background-color: pink;
+  margin-top: 20px;
+}/*# sourceMappingURL=main.css.map */
