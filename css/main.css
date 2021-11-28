@@ -109,7 +109,7 @@ input {
 .horizontal_bar .lupa {
   position: absolute;
   right: 15px;
-  top: 3px;
+  top: 8px;
 }
 
 .horizontal_bar .menu {
@@ -213,5 +213,76 @@ input {
   font-family: "Roboto Medium";
   background-color: #06A5E9;
   color: white;
+}
+
+.perfil-BemVindo, .perfil-image {
+  display: inline-block;
+  margin-top: 150px;
+  margin-left: 280px;
+}
+
+.perfil-BemVindo {
+  margin-left: 20px;
+  height: 100px;
+}
+
+.perfil-saldo {
+  margin-left: 280px;
+  font-family: "Roboto Light";
+}
+
+.perfil-transferências {
+  margin-left: 280px;
+  margin-top: 80px;
+}
+
+.perfil-grid {
+  margin-left: 18.5%;
+  margin-top: 50px;
+  -ms-grid-columns: (150px)[5];
+      grid-template-columns: repeat(5, 150px);
+  width: 60%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.perfil-grid-container {
+  position: relative;
+  /* CARDS */
+}
+
+.perfil-grid-container h4 {
+  margin-bottom: 10px;
+}
+
+.perfil-grid-container p {
+  margin-top: 5px;
+}
+
+.perfil .preço-valor {
+  color: red;
+}
+
+.perfil .montante-valor {
+  color: green;
+}
+
+.perfil .perfil-definiçoes {
+  margin-top: 80px;
+  margin-left: 280px;
+}
+
+.perfil .perfil-definiçoes p {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.perfil .perfil-filmes {
+  margin-top: 80px;
+  margin-left: 280px;
+}
+
+.perfil .perfil-filmes img {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */
