@@ -237,7 +237,7 @@ input {
   margin-left: 18.5%;
   margin-top: 50px;
   -ms-grid-columns: (150px, 5);
-      grid-template-columns: repeat(5, 150px);
+  grid-template-columns: repeat(5, 150px);
   width: 60%;
   display: -ms-grid;
   display: grid;
@@ -281,5 +281,35 @@ input {
 
 .perfil .perfil-filmes img {
   margin-left: 10px;
+}
+
+.filme-grid {
+  margin-left: 15%;
+  margin-top: 150px;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.filme-grid .container {
+  display: block;
+  position: relative;
+}
+
+.filme-grid .container .img-grande {
+  width: 100%;
+  height: auto;
+}
+
+.filme-grid .container-form .bloco {
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.filme-grid .container .coment {
+  width: 100%;
+  height: auto;
+  background-color: pink;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=main.css.map */
