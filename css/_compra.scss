@@ -18,7 +18,8 @@ div:nth-child(3) > h2{
 }
 
 div:nth-child(2) > div > h4{
-    font-family: "Roboto Light";
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    font-family: 'Roboto Light', sans-serif;
     margin-bottom: 0;
 }
 
@@ -38,7 +39,8 @@ input{
 
 .finalizar{
     text-align: center;
-    font-family: "Roboto Medium";
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    font-family: 'Roboto Medium', sans-serif;
     background-color: $primaryBlue;
     color: white;
 }
