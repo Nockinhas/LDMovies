@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   font-family: "Roboto", sans-serif;
   -webkit-box-sizing: border-box;
@@ -120,11 +122,6 @@ input {
   margin-top: 3%;
 }
 
-.homepage {
-  /* TÍTULO FILMES + LISTAGEM */
-  /* MAIN */
-}
-
 .homepage-list {
   margin-top: 80px;
   margin-left: 78%;
@@ -142,7 +139,7 @@ input {
   margin-top: 150px;
   -ms-grid-columns: (15rem)[auto-fit];
       grid-template-columns: repeat(auto-fit, 15rem);
-  width: 70%;
+  width: 80%;
   display: -ms-grid;
   display: grid;
 }
@@ -190,7 +187,7 @@ div:nth-child(3) > h2 {
 }
 
 div:nth-child(2) > div > h4 {
-  font-family: "Roboto Light";
+  font-family: 'Roboto Light', sans-serif;
   margin-bottom: 0;
 }
 
@@ -210,7 +207,7 @@ input {
 
 .finalizar {
   text-align: center;
-  font-family: "Roboto Medium";
+  font-family: 'Roboto Medium', sans-serif;
   background-color: #06A5E9;
   color: white;
 }
@@ -239,7 +236,7 @@ input {
 .perfil-grid {
   margin-left: 18.5%;
   margin-top: 50px;
-  -ms-grid-columns: (150px)[5];
+  -ms-grid-columns: (150px, 5);
       grid-template-columns: repeat(5, 150px);
   width: 60%;
   display: -ms-grid;
