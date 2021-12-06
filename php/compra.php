@@ -1,3 +1,8 @@
+<?php
+include("session.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +26,15 @@
         <a class="logo" href="homepage.html">LDMovies</a>
         <div class="barra_de_pesquisa">
             <input type="text" name="search" alt="search" class="search">
-            <img src="images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
+            <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
         </div>
-        <img src="images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
-        <img src="images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
+        <img src="../images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
+        <img src="../images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
         <div class="cover" width="100%"></div>
     </div>
 
         <div class="container">
-            <img src="images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
+            <img src="../images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
             <div class="container-information">
                 <h2>Pulp Fiction</h2> 
                 <h4>TOTAL</h4> 

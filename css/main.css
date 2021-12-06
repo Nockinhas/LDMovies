@@ -30,6 +30,12 @@ input {
 
 .login-container {
   position: relative;
+  background-color: black;
+  color: white;
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 30px;
 }
 
 .login-container h1 {
@@ -47,27 +53,38 @@ input {
   height: 30px;
 }
 
-.login-container #username, .login-container #password {
+.login #username, .login #password {
   padding-left: 3%;
 }
 
-.login-container #password {
+.login #password {
   margin-top: 15px;
 }
 
-.login-container #register, .login-container #login {
+.login .btnRegister, .login .btnLogin {
   font-family: "Roboto Medium", sans-serif;
 }
 
-.login-container #login {
+.login .btnLogin {
   margin-top: 5%;
   color: white;
   background-color: #06A5E9;
 }
 
-.login-container #register {
+.login .btnRegister {
   color: white;
   background-color: black;
+}
+
+.login .error {
+  width: 92%;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: left;
 }
 
 /* HEADER */
@@ -241,7 +258,7 @@ input {
 .perfil-grid {
   margin-left: 18.5%;
   margin-top: 50px;
-  -ms-grid-columns: (150px, 5);
+  -ms-grid-columns: (150px)[5];
       grid-template-columns: repeat(5, 150px);
   width: 60%;
   display: -ms-grid;
@@ -347,6 +364,42 @@ input {
 }
 
 .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.optionsnav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.optionsnav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.optionsnav a:hover {
+  color: #f1f1f1;
+}
+
+.optionsnav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;

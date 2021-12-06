@@ -1,3 +1,8 @@
+<?php
+include("session.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,27 +19,37 @@
             <!-- Menu -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="homepage.html">Home</a>
-                <a href="perfil.html">Perfil</a>
+                <a href="homepage.php">Home</a>
+                <a href="perfil.php">Perfil</a>
             </div>
 
-              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logo" href="homepage.html">LDMovies</a>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <a class="logo" href="homepage.php">LDMovies</a>
             <div class="barra_de_pesquisa">
                 <input type="text" name="search" alt="search" class="search">
-                <img src="images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
+                <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
             </div>
-            <img src="images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
-            <img src="images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
-            <div class="cover" width="100%"></div>
+            <img src="../images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
+
+            <!-- TRES PONTINHOS -->
+            <div id="myOps" class="optionsnav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeOps()">&times;</a>
+                <a href="logout.php">Logout</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openOps()">
+                <img src="../images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
+            </span>
+
+            <img src="../images/cover.png" alt="cover" class="cover" width="100%" height="auto">
+
         </div>
 
         <div class="filme-grid">
             <div class="container">
-                <img src="images/Filmes/2.jpg" class="img-grande">
+                <img src="../images/Filmes/2.jpg" class="img-grande">
             </div>
             <div class="container">
-                <img src="images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
+                <img src="../images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
                 <div class="container-information">
                     <h2>Pulp Fiction</h2> 
                     <h4>TOTAL</h4> 
@@ -90,6 +105,6 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="JS/menu.js"></script>
+    <script type="text/javascript" src="../JS/menu.js"></script>
 </body>
 </html>

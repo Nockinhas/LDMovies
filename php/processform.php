@@ -1,29 +1,29 @@
 <?php
 
+$errors=0;
+
 $servername= "dbname=postgres user=postgres password=postgres host=localhost port=5432";
 $connection = pg_connect($servername);
 if (!$connection){
     die("Erro na ligacao");
 }
 
-$username = $_POST['Username'];
-$password = $_POST['Password'];
-
-echo $username;
-echo $password;
-
+/* MOSTRAR USERS */
 /* $resultados= pg_query($connection, "select * from administrador") or die;
 $resultados= pg_fetch_all($resultados);
 foreach($resultados as $linha){
     print $linha['username'] . " " . $linha['password'];
     print "\n";
-} */
+}  */
 
-/* $resultados = pg_query($connection, "delete from administrador where username='Jose'");
-print pg_affected_rows($resultados);  */
+/*  ELIMINAR USER  */
 
-$resultados = pg_query($connection, "insert into administrador values ('$username' , '$password')");
+/* $resultados = pg_query($connection, "delete from administrador where username=''");
+print pg_affected_rows($resultados);   */
 
-//echo "Ligacao estabelecida!";    // do something herepg_close($connection);
+/* ADICIONAR USER */
+ /* $resultados = pg_query($connection, "insert into administrador values ('$username' , '$password')");  */
+
+/* echo "Ligacao estabelecida!";    // do something herepg_close($connection); */
 pg_close($connection);
 ?>

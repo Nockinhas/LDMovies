@@ -1,10 +1,14 @@
+<?php
+include("session.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <div class="perfil">
@@ -13,24 +17,44 @@
             <!-- Menu -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="homepage.html">Home</a>
-                <a href="perfil.html">Perfil</a>
+                <a href="homepage.php">Home</a>
+                <a href="perfil.php">Perfil</a>
             </div>
 
-              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logo" href="homepage.html">LDMovies</a>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <a class="logo" href="homepage.php">LDMovies</a>
             <div class="barra_de_pesquisa">
                 <input type="text" name="search" alt="search" class="search">
-                <img src="images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
+                <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
             </div>
-            <img src="images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
-            <img src="images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
-            <div class="cover" width="100%"></div>
+            <img src="../images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
+
+            <!-- TRES PONTINHOS -->
+            <div id="myOps" class="optionsnav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeOps()">&times;</a>
+                <a href="logout.php">Logout</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openOps()">
+                <img src="../images/Icons/options.png" alt="options" class="options" width="22px" height="auto">
+            </span>
+
+            <img src="../images/cover.png" alt="cover" class="cover" width="100%" height="auto">
+
         </div>
 
-            <img src="images/Icons/perfil.png" alt="perfil" class="perfil-image" width="50px" height="auto">
+            <img src="../images/Icons/perfil.png" alt="perfil" class="perfil-image" width="50px" height="auto">
             <h2 class="perfil-BemVindo">Bem Vindo<br>Username!</h2>
-            <h3 class="perfil-saldo">Saldo atual: <b>10,55€</b></h3>
+            <h3 class="perfil-saldo">Saldo atual:<b>
+                    <?php 
+                        require('baseDados.php');
+                        $servername= "dbname=postgres user=postgres password=postgres host=localhost port=5432";
+                        $connection = pg_connect($servername);
+                        $username = $_REQUEST['username'];
+                        $saldo= pg_query($connection, "select saldo from clientes where username=$username");
+                        echo $saldo;
+                    ?>
+                </b>
+            </h3>
             <h3 class="perfil-transferências">Transferências</h3>
 
         <div class="perfil-grid">
@@ -147,12 +171,12 @@
         </div>
         <div class="perfil-filmes">
             <h3 class="filmes">Meus Filmes</h3>
-            <img src="images/Filmes/PF_cover.jpg" alt="PF" class="PF" width="auto" height="150px">
-            <img src="images/Filmes/KB_cover.jpg" alt="KB" class="KB" width="auto" height="150px">
-            <img src="images/Filmes/SsL_cover.jpg" alt="SsL" class="SsL" width="auto" height="150px">
+            <img src="../images/Filmes/PF_cover.jpg" alt="PF" class="PF" width="auto" height="150px">
+            <img src="../images/Filmes/KB_cover.jpg" alt="KB" class="KB" width="auto" height="150px">
+            <img src="../images/Filmes/SsL_cover.jpg" alt="SsL" class="SsL" width="auto" height="150px">
         </div>
     </div>
 
-    <script type="text/javascript" src="JS/menu.js"></script>
+    <script type="text/javascript" src="../JS/menu.js"></script>
 </body>
 </html>
