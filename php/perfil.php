@@ -43,15 +43,14 @@ include("session.php");
         </div>
 
             <img src="../images/Icons/perfil.png" alt="perfil" class="perfil-image" width="50px" height="auto">
-            <h2 class="perfil-BemVindo">Bem Vindo<br>Username!</h2>
+            <h2 class="perfil-BemVindo">Bem Vindo <?php echo $_SESSION["username"] ?></h2>
             <h3 class="perfil-saldo">Saldo atual:<b>
                     <?php 
                         require('baseDados.php');
-                        $servername= "dbname=postgres user=postgres password=postgres host=localhost port=5432";
-                        $connection = pg_connect($servername);
-                        $username = $_REQUEST['username'];
-                        $saldo= pg_query($connection, "select saldo from clientes where username=$username");
-                        echo $saldo;
+               
+                        $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
+                        $saldo = pg_fetch_row($rows);
+                        echo $saldo[0];
                     ?>
                 </b>
             </h3>
