@@ -56,11 +56,19 @@ include("session.php");
                         require('baseDados.php');
                         $rows= pg_query("select * from filmes where id='". $i . "'");
                         $filme = pg_fetch_row($rows);
-                        echo
-                        '<h2>' . $filme[0] . '</h2> 
-                        <h4>TOTAL</h4> 
-                        <h3><b>' . $filme[3] . '€</b></h3>
-                        </div>
+                        $preço = ($filme[4] * $filme[3]) / 100 ;
+                        echo '<h2>' . $filme[0] . '</h2> 
+                        <h4>TOTAL</h4>';
+                        if($filme[4] != NULL){
+                        echo '<h3><strike>' . $filme[3] . '€</strike></h3>
+                        <h3><b>(' . $filme[4] . '% de desconto)</b></h3>
+                        <h3><b>' . $preço . '€</b></h3>';
+                        }
+                        else{
+                            echo '<h3><b>' . $filme[3] . '€</b></h3>';
+                        }
+                        echo 
+                        '</div>
                         </div>
                         <div class="container">
                             <h3>Eleco</h3>
