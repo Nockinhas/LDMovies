@@ -24,7 +24,7 @@ include("session.php");
             </div>
 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logo" href="homepage.php">LDMovies</a>
+            <a class="logo" href="/homepage.php">LDMovies</a>
             <div class="barra_de_pesquisa">
                 <input type="text" name="search" alt="search" class="search">
                 <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
@@ -61,8 +61,8 @@ include("session.php");
                         '<div class="homepage-grid-container">
                             <div class="card">
                                 <div class="card-information">
-                                <img src="../images/' . $i .'.jpg" alt="1" style="width:200px">
-                                <h3>' . $filme[0] . '</h3> 
+                                <img src="../images/' . $i .'.jpg" alt="1" style="width:200px" onclick="filme(' . $i . ')" value="' . $i . '">
+                                <h3>' . $filme[0] . '</h3>
                                 <h4>' . $filme[1] . '</h4> 
                                 </div>
                             </div>

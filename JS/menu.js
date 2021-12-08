@@ -13,3 +13,7 @@ function openOps() {
 function closeOps() {
   document.getElementById("myOps").style.width = "0";
 }
+
+function filme(i){
+    location.href = "/php/filme.php?i="+i;
+}

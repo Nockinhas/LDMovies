@@ -139,11 +139,6 @@ input {
   margin-top: 3%;
 }
 
-.homepage {
-  /* TÍTULO FILMES + LISTAGEM */
-  /* MAIN */
-}
-
 .homepage-list {
   margin-top: 80px;
   margin-left: 78%;
@@ -258,7 +253,7 @@ input {
 .perfil-grid {
   margin-left: 18.5%;
   margin-top: 50px;
-  -ms-grid-columns: (150px)[5];
+  -ms-grid-columns: (150px)(5);
       grid-template-columns: repeat(5, 150px);
   width: 60%;
   display: -ms-grid;
