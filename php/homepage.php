@@ -48,18 +48,30 @@ include("session.php");
             <img src="../images/Icons/list.png" alt="list" class="homepage-list" width="22px" height="auto">
 
         <div class="homepage-grid">
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
+
+                 <?php
+                 require('baseDados.php');
+                 $query = "SELECT * FROM filmes";
+                 $resultados = pg_query($connection, $query);
+                 $numFilmes = pg_num_rows($resultados);
+                    for($i = 0; $i < $numFilmes; $i++){
+                        $rows= pg_query("select * from filmes where id='". $i ."'");
+                        $filme = pg_fetch_row($rows);
+                        echo 
+                        '<div class="homepage-grid-container">
+                            <div class="card">
+                                <div class="card-information">
+                                <img src="../images/' . $i .'.jpg" alt="1" style="width:200px">
+                                <h3>' . $filme[0] . '</h3> 
+                                <h4>' . $filme[1] . '</h4> 
+                                </div>
+                            </div>
+                        </div>';
+                    }
+                ?>
+
+
+            <!-- <div class="homepage-grid-container">
                 <div class="card">
                     <img src="../images/1.jpg" alt="1" style="width:100%">
                     <div class="card-information">
@@ -136,7 +148,7 @@ include("session.php");
                     Um pistoleiro se apaixona pela mulher...</h5> 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
