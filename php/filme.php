@@ -71,10 +71,10 @@ include("session.php");
                         '</div>
                         </div>
                         <div class="container">
-                            <h3>Eleco</h3>
+                            <h3>Elenco</h3>
                             <img src="../images/' . $i .'.jpg" alt="1" style="width:100px">';
-                            for($i = 0; $i < 7; $i++){
-                                echo '<h4>' . json_decode(str_replace(['{', '}'], ['[', ']'], $filme[2]))[$i] . '</h4> ';
+                            for($j = 0; $j < 7; $j++){
+                                echo '<h4>' . json_decode(str_replace(['{', '}'], ['[', ']'], $filme[2]))[$j] . '</h4> ';
                             }
                             
                         '</div>'
