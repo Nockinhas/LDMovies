@@ -18,6 +18,6 @@ function filme(i){
     location.href = "/php/filme.php?i="+i;
 }
 
-function comprar(){
+function comprar(i){
   location.href = "/php/compra.php?i="+i;
 }
