@@ -59,7 +59,7 @@ include("session.php");
                         $preço = ($filme[4] * $filme[3]) / 100 ;
                         echo '<h2>' . $filme[0] . '</h2> 
                         <h4>TOTAL</h4>';
-                        if($filme[4] != NULL){
+                        if($filme[4] != NULL || $filme[4] != 0){
                         echo '<h3><strike>' . $filme[3] . '€</strike></h3>
                         <h3><b>(' . $filme[4] . '% de desconto)</b></h3>
                         <h3><b>' . $preço . '€</b></h3>';

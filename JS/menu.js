@@ -17,3 +17,7 @@ function closeOps() {
 function filme(i){
     location.href = "/php/filme.php?i="+i;
 }
+
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}

@@ -1,6 +1,23 @@
 <?php
 include("session.php");
+
+        require('baseDados.php');
+        if(isset($_POST['montante'])){
+            $montante = $_REQUEST['montante'];
+            $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
+            $saldo = pg_fetch_result($rows, 0, 0);
+            $saldo = $saldo + $montante;
+            $rows= pg_query("update clientes set saldo='$saldo' where username='". $_SESSION["username"] ."'");
+        }
 ?>
+
+    <script>
+        if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,12 +64,11 @@ include("session.php");
             <h3 class="perfil-saldo">Saldo atual:<b>
                     <?php 
                         require('baseDados.php');
-               
                         $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
-                        $saldo = pg_fetch_row($rows);
-                        echo $saldo[0];
+                        $saldo = pg_fetch_result($rows, 0, 0);
+                        echo $saldo;
                     ?>
-                </b>
+                €</b>
             </h3>
             <h3 class="perfil-transferências">Transferências</h3>
 
@@ -163,9 +179,18 @@ include("session.php");
         </div>
         <div class="perfil-definiçoes">
         <h3 class="definiçoes">Definições da conta</h3>
-            <p class="mudar-user">Mudar username</p>
-            <p class="mudar-pass">Mudar password</p>
             <p class="carregar">Carregar Saldo</p>
+            <form method="POST">
+                <p>Montante:</p>
+                <input type="number" id="montante" name="montante"><br>
+                <button type="submit" class="btnConfirmar" name="confirmar">Confirmar</button>
+            </form>
+            <?php
+            if(isset($_POST['montante'])){
+            echo '<p> Carregamento concluído com sucesso! </p>
+                  <p> Saldo atual: ' . $saldo . '</p>';
+            }
+            ?>
             <p class="transferir">Efectuar transferência</p>
         </div>
         <div class="perfil-filmes">
@@ -175,7 +200,6 @@ include("session.php");
             <img src="../images/Filmes/SsL_cover.jpg" alt="SsL" class="SsL" width="auto" height="150px">
         </div>
     </div>
-
     <script type="text/javascript" src="../JS/menu.js"></script>
 </body>
 </html>
