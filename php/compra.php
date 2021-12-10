@@ -67,7 +67,7 @@ include("session.php");
                     <input type="date" class="Data" name="Data"><br>
                     <label for="PAC">PAC:</label><br>
                     <input type="text" class="PAC" name="PAC"><br>
-                    <input type="submit" class="finalizar" name="submit" value="Finalizar Compra!" onclick="validar()">
+                    <input type="button" class="finalizar" name="submit" value="Finalizar Compra!" onclick="validar()">
                 </form>
             </div>
         </div>
@@ -79,7 +79,7 @@ include("session.php");
                 }
                 else {
                 alert("Compra efetuada com sucesso!");
-                
+                location.href = "/php/homepage.php?";
                 }
             }
         </script>
