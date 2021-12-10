@@ -63,14 +63,14 @@ include("session.php");
                         if($filme[6] != NULL || $filme[6] != NULL){
                         echo '<h3><strike>' . $filme[5] . '€</strike></h3>
                         <h3><b>(' . $filme[6] . '% de desconto)</b></h3>
-                        <h3><b>' . $preço . '€</b></h3>
-                        <button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>';
+                        <h3><b>' . $preço . '€</b></h3>';
                         }
                         else{
                             echo '<h3><b>' . $filme[5] . '€</b></h3>';
                         }
                         echo 
-                        '</div>
+                        '<button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>
+                        </div>
                         </div>
                         <div class="container">';
                         $sinopse = array( 0 => 'Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. Um pistoleiro se apaixona pela mulher de seu chefe, um boxeador não se sai bem em uma luta e um casal tenta executar um plano de roubo que foge do controle.',
