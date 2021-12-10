@@ -10,7 +10,7 @@ include("session.php");
     <title>Compra</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <div class="horizontal_bar">
@@ -36,9 +36,16 @@ include("session.php");
         <div class="container">
             <img src="../images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
             <div class="container-information">
-                <h2>Pulp Fiction</h2> 
+                <?php
+                $i = $_GET['i'];
+                require('baseDados.php');
+                $rows= pg_query("select * from filmes where id='". $i . "'");
+                $filme = pg_fetch_row($rows);
+                $preço = ($filme[6] * $filme[5]) / 100 ;
+                echo '<h2>' . $filme[0] . '</h2> 
                 <h4>TOTAL</h4> 
-                <h3><b>1.50€</b></h3> 
+                <h3><b>' . $preco . '</b></h3> ';
+                ?>
             </div>
         </div>
         <div class="container">
@@ -59,7 +66,18 @@ include("session.php");
                 </form>
             </div>
         </div>
-    
+        <script>
+            function validar(){
+                if(document.forms['purchaseForm'].Endereço.value === "" || document.forms['purchaseForm'].Cartão.value === "" || document.forms['purchaseForm'].VCV.value === "" ||
+                document.forms['purchaseForm'].Data.value === "" || document.forms['purchaseForm'].PAC.value === ""){
+                alert("Preencha todos os campos!");
+                }
+                else {
+                alert("Compra efetuada com sucesso!");
+                
+                }
+            }
+        </script>
         <script type="text/javascript" src="JS/menu.js"></script>
 </body>
 </html>

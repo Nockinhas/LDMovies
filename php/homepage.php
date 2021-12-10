@@ -54,6 +54,15 @@ include("session.php");
                  $query = "SELECT * FROM filmes";
                  $resultados = pg_query($connection, $query);
                  $numFilmes = pg_num_rows($resultados);
+                 $sinopse = array( 0 => 'Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
+                 Um pistoleiro se apaixona pela mulher...',
+                1 => 'A ex-assassina conhecida apenas como "A Noiva" acorda de um coma de quatro anos decidida a se vingar de Bill...', 
+                2 => 'Dom Cobb é um ladrão com a rara habilidade de roubar segredos do inconsciente...', 
+                3 => 'Um alerta vermelho da Interpol é emitido e o agente do FBI John Hartley assume o caso...',
+                4 => 'O jornalista Eddie Brock desenvolve força e poder sobre-humanos quando o seu corpo se funde...', 
+                5 => 'No final da década de 1969, Hollywood começa a se transformar e o astro de Tv...',
+                6 => 'Durante a Segunda Guerra Mundial, na França, um grupo de judeus americanos...', 
+                7 => 'Paul Atreides é um jovem brilhante, dono de um destino além da sua compreensão..');
                     for($i = 0; $i < $numFilmes; $i++){
                         $rows= pg_query("select * from filmes where id='". $i ."'");
                         $filme = pg_fetch_row($rows);
@@ -64,91 +73,12 @@ include("session.php");
                                 <img src="../images/' . $i .'.jpg" alt="1" style="width:200px" onclick="filme(' . $i . ')" value="' . $i . '">
                                 <h3>' . $filme[0] . '</h3>
                                 <h4>' . $filme[1] . '</h4> 
+                                <h5>' . $sinopse[$i] . '</h5>
                                 </div>
                             </div>
                         </div>';
                     }
                 ?>
-
-
-            <!-- <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div>
-            <div class="homepage-grid-container">
-                <div class="card">
-                    <img src="../images/1.jpg" alt="1" style="width:100%">
-                    <div class="card-information">
-                    <h3>Pulp Fiction</h3> 
-                    <h4>1994 ‧ Crime/Drama ‧ 2h 34m</h4> 
-                    <h5>Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. 
-                    Um pistoleiro se apaixona pela mulher...</h5> 
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
