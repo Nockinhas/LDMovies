@@ -3,5 +3,5 @@
     if(!isset($_SESSION["username"])) {
         header("Location: registration.php");
         exit();
-    }
+    } 
 ?>

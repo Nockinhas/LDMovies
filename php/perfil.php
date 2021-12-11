@@ -9,7 +9,7 @@ include("session.php");
             $saldo = $saldo + $montante;
             $rows= pg_query("update clientes set saldo='$saldo' where username='". $_SESSION["username"] ."'");
         }
-?>
+?> 
 
     <script>
         if ( window.history.replaceState ) {

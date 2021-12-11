@@ -6,7 +6,7 @@
     <meta charset="utf-8"/>
     <title>Registration</title>
     <link rel="stylesheet" href="../css/main.css"/>
-</head>
+</head> 
 <body>
 <?php
     require('baseDados.php');
