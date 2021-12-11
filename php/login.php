@@ -5,7 +5,7 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/main.css">
-</head> 
+</head>
 <body>
     <?php
         require('baseDados.php');
@@ -38,8 +38,7 @@
             }
         }
         else{
-    ?>
-    <div class="login">
+    echo '<div class="login">
         <div class="login-grid">
             <div class="login-container">
                 <h1>LDMovies</h1>
@@ -55,8 +54,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <?php
+    </div>';
         }
     ?>
 </body>

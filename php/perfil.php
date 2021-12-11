@@ -9,7 +9,7 @@ include("session.php");
             $saldo = $saldo + $montante;
             $rows= pg_query("update clientes set saldo='$saldo' where username='". $_SESSION["username"] ."'");
         }
-?> 
+?>
 
     <script>
         if ( window.history.replaceState ) {
@@ -72,7 +72,7 @@ include("session.php");
             </h3>
             <h3 class="perfil-transferências">Transferências</h3>
 
-        <div class="perfil-grid">
+        <!-- <div class="perfil-grid">
             <div class="perfil-grid-container">
                 <h4 class="remetente">Remetente</h4>
                 <p class="remetente-username">username2</p>
@@ -176,7 +176,7 @@ include("session.php");
                 <h4 class="data">Data</h4>
                 <p class="data-valor">03-10-2021</p>
             </div>
-        </div>
+        </div> -->
         <div class="perfil-definiçoes">
         <h3 class="definiçoes">Definições da conta</h3>
             <p class="carregar">Carregar Saldo</p>
@@ -188,16 +188,23 @@ include("session.php");
             <?php
             if(isset($_POST['montante'])){
             echo '<p> Carregamento concluído com sucesso! </p>
-                  <p> Saldo atual: ' . $saldo . '</p>';
+                  <p> Saldo atual: ' . $saldo . '€</p>';
             }
             ?>
             <p class="transferir">Efectuar transferência</p>
         </div>
         <div class="perfil-filmes">
             <h3 class="filmes">Meus Filmes</h3>
-            <img src="../images/Filmes/PF_cover.jpg" alt="PF" class="PF" width="auto" height="150px">
-            <img src="../images/Filmes/KB_cover.jpg" alt="KB" class="KB" width="auto" height="150px">
-            <img src="../images/Filmes/SsL_cover.jpg" alt="SsL" class="SsL" width="auto" height="150px">
+
+            <?php
+            require('baseDados.php');
+            $rows= pg_query("select * from clientes where username='". $_SESSION['username'] . "'");
+            $clientes = pg_fetch_row($rows);
+            $numFilmes = pg_num_fields($rows);
+            for($i = 3; $i < $numFilmes; $i++){
+            echo '<img src="../images/Filmes/' . $i . '_cover.jpg" width="auto" height="150px">';
+            }
+            ?>
         </div>
     </div>
     <script type="text/javascript" src="../JS/menu.js"></script>

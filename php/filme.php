@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-?> 
+?>
 
 
 <!DOCTYPE html>
@@ -58,6 +58,7 @@ include("session.php");
                         $rows= pg_query("select * from filmes where id='". $i . "'");
                         $filme = pg_fetch_row($rows);
                         $preço = ($filme[6] * $filme[5]) / 100 ;
+                        $preço = $filme[5] - $preço;
                         echo '<h2>' . $filme[0] . '</h2> 
                         <h4>TOTAL</h4>';
                         if($filme[6] != NULL || $filme[6] != NULL){
@@ -68,9 +69,24 @@ include("session.php");
                         else{
                             echo '<h3><b>' . $filme[5] . '€</b></h3>';
                         }
-                        echo 
-                        '<button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>
-                        </div>
+                        
+                        $rows= pg_query("select * from clientes where username='". $_SESSION['username'] . "'");
+                        $clientes = pg_fetch_row($rows);
+                        $numColumns = pg_num_fields($rows);
+                        $comprado = 0;
+                        for ($j = 0; $j < $numColumns; $j++) {
+                            if($clientes[$j]!=$filme[0]){
+                                $comprado = 0;
+                            }
+                            else{
+                                $comprado=1;
+                            }
+                        }
+                        if($comprado==0){
+                            echo '<button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>';
+                        }
+                        
+                        echo '</div>
                         </div>
                         <div class="container">';
                         $sinopse = array( 0 => 'Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. Um pistoleiro se apaixona pela mulher de seu chefe, um boxeador não se sai bem em uma luta e um casal tenta executar um plano de roubo que foge do controle.',
@@ -88,8 +104,7 @@ include("session.php");
                             for($j = 2; $j < 5; $j++){
                                 echo '<h4>' . $filme[$j] . '</h4> ';
                             }
-                            
-                        '</div>'
+                        echo '</div>';
             ?> 
 
     <script type="text/javascript" src="../JS/menu.js"></script>

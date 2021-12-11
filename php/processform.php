@@ -14,7 +14,7 @@ $resultados= pg_fetch_all($resultados);
 foreach($resultados as $linha){
     print $linha['username'] . " " . $linha['password'];
     print "\n";
-}  */ 
+}  */
 
 /*  ELIMINAR USER  */
 

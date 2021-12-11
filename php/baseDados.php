@@ -6,4 +6,4 @@
     if (!$connection){
         die("Erro na ligacao");
     }
-?> 
+?>

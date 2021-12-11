@@ -21,3 +21,12 @@ function filme(i){
 function comprar(i){
   location.href = "/php/compra.php?i="+i;
 }
+
+function finalizar(i){
+  if(document.forms['purchaseForm'].Endereço.value === "" || document.forms['purchaseForm'].Cartão.value === "" || document.forms['purchaseForm'].VCV.value === "" || document.forms['purchaseForm'].Data.value === "" || document.forms['purchaseForm'].PAC.value === ""){
+  alert("Preencha todos os campos!");
+  }
+  else{
+      location.href = "/php/confirmation.php?i="+i;
+  }
+}

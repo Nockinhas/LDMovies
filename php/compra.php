@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-?> 
+?>
 
 
 <!DOCTYPE html>
@@ -18,12 +18,12 @@ include("session.php");
         <!-- Menu -->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="homepage.html">Home</a>
-            <a href="perfil.html">Perfil</a>
+            <a href="homepage.php">Home</a>
+            <a href="perfil.php">Perfil</a>
         </div>
 
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        <a class="logo" href="homepage.html">LDMovies</a>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <a class="logo" href="homepage.php">LDMovies</a>
         <div class="barra_de_pesquisa">
             <input type="text" name="search" alt="search" class="search">
             <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
@@ -42,15 +42,14 @@ include("session.php");
                 $rows= pg_query("select * from filmes where id='". $i . "'");
                 $filme = pg_fetch_row($rows);
                 if($filme[6]!= NULL || $filme[6]!=0){
-                $preço = ($filme[6] * $filme[5]) / 100 ;
+                $preço = $filme[5] - (($filme[6] * $filme[5]) / 100) ;
                 }
                 else{
                     $preço = $filme[5];
                 }
                 echo '<h2>' . $filme[0] . '</h2> 
                 <h4>TOTAL</h4> 
-                <h3><b>' . $preço . '€</b></h3> ';
-                ?>
+                <h3><b>' . $preço . '€</b></h3>
             </div>
         </div>
         <div class="container">
@@ -67,22 +66,11 @@ include("session.php");
                     <input type="date" class="Data" name="Data"><br>
                     <label for="PAC">PAC:</label><br>
                     <input type="text" class="PAC" name="PAC"><br>
-                    <input type="button" class="finalizar" name="submit" value="Finalizar Compra!" onclick="validar()">
+                    <button type="button" onclick="finalizar(' . $i . ');" value="' . $i . '">Finalizar Compra!</button>
                 </form>
             </div>
-        </div>
-        <script>
-            function validar(){
-                if(document.forms['purchaseForm'].Endereço.value === "" || document.forms['purchaseForm'].Cartão.value === "" || document.forms['purchaseForm'].VCV.value === "" ||
-                document.forms['purchaseForm'].Data.value === "" || document.forms['purchaseForm'].PAC.value === ""){
-                alert("Preencha todos os campos!");
-                }
-                else {
-                alert("Compra efetuada com sucesso!");
-                location.href = "/php/homepage.php?";
-                }
-            }
-        </script>
-        <script type="text/javascript" src="JS/menu.js"></script>
+        </div>';
+        ?>    
+        <script type="text/javascript" src="../JS/menu.js"></script>
 </body>
 </html>
