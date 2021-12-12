@@ -62,8 +62,10 @@ include("session.php");
             </div>
         </div>
 
+        <div>
             <h2 class="homepage-títuloFilmes">Filmes</h2>
             <img src="../images/Icons/list.png" alt="list" class="homepage-list" width="22px" height="auto">
+        </div>
 
         <div class="homepage-grid">
 
