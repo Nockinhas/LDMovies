@@ -38,7 +38,10 @@
             }
         }
         else{
-    echo '<div class="login">
+
+        ?>
+    
+            <div class="login">
         <div class="login-grid">
             <div class="login-container">
                 <h1>LDMovies</h1>
@@ -54,7 +57,9 @@
                 </div>
             </div>
         </div>
-    </div>';
+    </div>
+
+    <?php 
         }
     ?>
 </body>
