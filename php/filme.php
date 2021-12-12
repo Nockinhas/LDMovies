@@ -71,7 +71,7 @@ include("session.php");
                         }
                         
                         $rows= pg_query("select * from clientes where username='". $_SESSION['username'] . "'");
-                        $clientes = pg_fetch_row($rows);
+                        $clientes = pg_fetch_all_columns($rows);
                         $numColumns = pg_num_fields($rows);
                         $comprado = 0;
                         for ($j = 0; $j < $numColumns; $j++) {

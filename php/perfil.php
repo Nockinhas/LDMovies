@@ -70,7 +70,7 @@ include("session.php");
                     ?>
                 €</b>
             </h3>
-            <h3 class="perfil-transferências">Transferências</h3>
+           <!--  <h3 class="perfil-transferências">Transferências</h3> -->
 
         <!-- <div class="perfil-grid">
             <div class="perfil-grid-container">
@@ -188,10 +188,46 @@ include("session.php");
             <?php
             if(isset($_POST['montante'])){
             echo '<p> Carregamento concluído com sucesso! </p>
-                  <p> Saldo atual: ' . $saldo . '€</p>';
+                <p> Saldo atual: ' . $saldo . '€</p>';
             }
             ?>
-            <p class="transferir">Efectuar transferência</p>
+
+            <?php
+            require('baseDados.php');
+            $rows= pg_query("SELECT username FROM clientes");
+            $clientes = pg_fetch_all_columns($rows);
+            $lista = pg_num_rows($rows);
+            echo '<p class="transferir">Efectuar transferência</p>
+            <form method="POST">
+                <label for="utilizador">Escolha o utilizador destinatário:</label>
+                <select name="utilizador" id="utilizadores">';
+                for($i=0; $i < $lista; $i++){
+                    if($clientes[$i] != $_SESSION["username"]){
+                    echo '<option value="' . $clientes[$i] . '">' . $clientes[$i]  . '</option>';
+                    }
+                }
+                echo '</select>
+                <p>Montante:</p>';
+                $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
+                $saldo = pg_fetch_result($rows, 0, 0);
+                echo '<input type="number" id="montante2" name="montante2"><br>
+                <br><br>
+                <button type="submit" class="btnConfirmar" name="confirmar">Confirmar</button>
+            </form>';
+            if(isset($_POST['montante2']) && isset($_POST['utilizador'])){
+                if($saldo - $_POST['montante2'] >= 0){
+                    $saldo = $saldo - $_POST['montante2'];
+                    $rows= pg_query("update clientes set saldo='$saldo' where username='". $_SESSION["username"] ."'");
+                    $rows= pg_query("update clientes set saldo='" . $_POST['montante2'] . "' where username='". $_POST["utilizador"] ."'");
+                    echo '<p> Transferência efetuada com sucesso! </p>';
+                    echo '<p> Saldo atual: ' . $saldo . '€</p>';
+                }
+                else{
+                    echo '<p>Saldo insuficiente!';
+                }
+            }
+            ?>
+
         </div>
         <div class="perfil-filmes">
             <h3 class="filmes">Meus Filmes</h3>
