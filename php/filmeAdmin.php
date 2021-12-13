@@ -118,5 +118,6 @@ include("session.php");
             ?> 
 
     <script type="text/javascript" src="../JS/menuAdmin.js"></script>
+    <br><br><br><br><br><br>
 </body>
 </html>

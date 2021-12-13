@@ -121,5 +121,6 @@ include("session.php");
             ?> 
 
     <script type="text/javascript" src="../JS/menu.js"></script>
+    <br><br><br><br><br><br>
 </body>
 </html>
