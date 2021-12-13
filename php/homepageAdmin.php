@@ -187,7 +187,6 @@ include("session.php");
             $resultados = pg_query($connection, $query);
 
             $tituloRF = ($_POST['tituloRF']);
-            echo $tituloRF;
 
             $Remquery = "DELETE from filmes where titulo ='". $tituloRF ."'";
             $novoFilme = pg_query($connection, $Remquery);
@@ -213,26 +212,24 @@ include("session.php");
 
     <?php
         require('baseDados.php');
-        if(isset($_POST['tituloRF'])){
+        if(isset($_POST['tituloOrdem'])){
             $query = "SELECT * FROM filmes";
             $resultados = pg_query($connection, $query);
-
-            $tituloRF = ($_POST['tituloRF']);
-            echo $tituloRF;
-
-            $Remquery = "DELETE from filmes where titulo ='". $tituloRF ."'";
-            $novoFilme = pg_query($connection, $Remquery);
         } else {
     ?>
 
     <div class="form-popup" id="OrdemForm">
         <form action="homepageAdmin.php" method="POST" class="form-container">
-            <h2>Ordenar por:</h2>
+        <h2>Ordenar por:</h2>
 
-            <button type="button" class="btnForm">Titulo</button>
-            <button type="button" class="btnForm">Ano</button>
+        <label><b>Titulo</b></label>
+        <input type="text" placeholder="Enter Titulo" name="tituloOrdem">
 
-            <button type="button" class="btnForm cancel" onclick="closeOrdem()">Cancelar</button>
+        <label><b>Ano</b></label>
+        <input type="number" min="1900" max="2099" step="1" value="2021" name="anoOrdem">
+
+        <button type="submit" class="btnForm">Submeter</button>
+        <button type="button" class="btnForm cancel" onclick="closeOrdem()">Cancelar</button>
         </form>
     </div>
     <?php

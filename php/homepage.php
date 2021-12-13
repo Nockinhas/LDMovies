@@ -53,12 +53,41 @@ include("session.php");
 
         <div class="homepage-grid">
 
-                 <?php
-                 require('baseDados.php');
-                 $query = "SELECT * FROM filmes";
-                 $resultados = pg_query($connection, $query);
-                 $numFilmes = pg_num_rows($resultados);
-                 $sinopse = array(
+                <?php
+                require('baseDados.php');
+                $query = "SELECT * FROM filmes";
+                $resultados = pg_query($connection, $query);
+                $numFilmes = pg_num_rows($resultados);
+
+
+                $Ordemquery = "SELECT titulo FROM filmes";
+                $resultados = pg_query($connection, $Ordemquery);
+                $todosTitulos = pg_fetch_all($resultados);
+                sort($todosTitulos);
+
+                echo 'titulos: ' . json_encode($todosTitulos);
+                echo '<br>';
+                echo '<br>';
+                echo '<br>';
+                echo '<br>';
+
+                for($i = 0; $i < $numFilmes; $i++){
+
+                }
+
+                $Ordemquery = "SELECT ano FROM filmes";
+                $resultados = pg_query($connection, $Ordemquery);
+                $todosTitulos = pg_fetch_all($resultados);
+                sort($todosTitulos);
+                echo 'anos: ' . json_encode($todosTitulos);
+                echo '<br>';
+                echo '<br>';
+                echo '<br>';
+                echo '<br>';
+
+
+                $numFilmes = pg_num_rows($resultados);
+                $sinopse = array(
                     0 => 'Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. Um pistoleiro se apaixona pela mulher de seu chefe, um boxeador não se sai bem em uma luta e um casal tenta executar um plano de roubo que foge do controle.',
                     1 => 'A ex-assassina conhecida apenas como "A Noiva" acorda de um coma de quatro anos decidida a se vingar de Bill, seu ex-amante e chefe, que tentou matá-la no dia do casamento. Ela está motivada a acertar as contas com cada uma das pessoas envolvidas com a perda da filha, da festa de casamento e dos quatro anos da sua vida. Na jornada, "A Noiva" é submetida a dores físicas agoniantes ao enfrentar a inescrupulosa gangue de Bill, o Esquadrão Assassino de Víboras Mortais.', 
                     2 => 'Dom Cobb é um ladrão com a rara habilidade de roubar segredos do inconsciente, obtidos durante o estado de sono. Impedido de retornar para sua família, ele recebe a oportunidade de se redimir ao realizar uma tarefa aparentemente impossível: plantar uma ideia na mente do herdeiro de um império. Para realizar o crime perfeito, ele conta com a ajuda do parceiro Arthur, o discreto Eames e a arquiteta de sonhos Ariadne. Juntos, eles correm para que o inimigo não antecipe seus passos.', 
@@ -76,54 +105,52 @@ include("session.php");
                     14 => 'Durante a Segunda Guerra Mundial, na França, um grupo de judeus americanos conhecidos como Bastardos espalha o terror entre o terceiro Reich. Ao mesmo tempo, Shosanna, uma judia que fugiu dos nazistas, planeja vingança quando um evento em seu cinema reunirá os líderes do partido.', 
                     15 => 'Paul Atreides é um jovem brilhante, dono de um destino além de sua compreensão. Ele deve viajar para o planeta mais perigoso do universo para garantir o futuro de seu povo.',
                 );
-                    for($i = 0; $i < $numFilmes; $i++){
-                        $rows= pg_query("select * from filmes where id='". $i ."'");
-                        $filme = pg_fetch_row($rows);
-                        echo 
-                        '<div class="homepage-grid-container">
-                            <div class="card">
-                                <div class="card-information">
-                                <img src="../images/' . $i .'.jpg" alt="1" style="width:200px" onclick="filme(' . $i . ')" value="' . $i . '">
-                                <h3>' . $filme[0] . '</h3>
-                                <h4>' . $filme[1] . '</h4> 
-                                <h5>' . $sinopse[$i] . '</h5>
-                                </div>
+
+                $listaSinopse = list($numFilmes) = $sinopse; //plup f is 0; kill bill
+                echo '!!!!!!!!!!!!!! ' . $listaSinopse[0];
+
+                if(isset($_POST['tituloOrdem'])){
+
+                }
+
+                if(isset($_POST['anoOrdem'])){
+
+                } else {
+
+                }
+                
+                for($i = 0; $i < $numFilmes; $i++){
+                    $rows= pg_query("select * from filmes where id='". $i ."'");
+                    $filme = pg_fetch_row($rows);
+
+                    echo 
+                    '<div class="homepage-grid-container">
+                        <div class="card">
+                            <div class="card-information">
+                            <img src="../images/' . $i .'.jpg" alt="1" style="width:200px" onclick="filme(' . $i . ')" value="' . $i . '">
+                            <h3>' . $filme[0] . '</h3>
+                            <h4>' . $filme[1] . '</h4> 
+                            <h5>' . $sinopse[$i] . '</h5>
                             </div>
-                        </div>';
-                    }
+                        </div>
+                    </div>';
+                }
                 ?>
         </div>
     </div>
 
     <!-- Ordem filmes -->
 
-    <?php
-        require('baseDados.php');
-        if(isset($_POST['tituloRF'])){
-            $query = "SELECT * FROM filmes";
-            $resultados = pg_query($connection, $query);
-
-            $tituloRF = ($_POST['tituloRF']);
-            echo $tituloRF;
-
-            $Remquery = "DELETE from filmes where titulo ='". $tituloRF ."'";
-            $novoFilme = pg_query($connection, $Remquery);
-        } else {
-    ?>
-
     <div class="form-popup" id="OrdemForm">
-        <form action="homepageAdmin.php" method="POST" class="form-container">
+        <form action="homepage.php" method="POST" class="form-container">
             <h2>Ordenar por:</h2>
 
-            <button type="button" class="btnForm">Titulo</button>
-            <button type="button" class="btnForm">Ano</button>
+            <input type="button" class="btnForm" name="tituloOrdem" value="Título">
+            <input type="button" class="btnForm" name="anoOrdem" value="Ano">
 
             <button type="button" class="btnForm cancel" onclick="closeOrdem()">Cancelar</button>
         </form>
     </div>
-    <?php
-        }
-    ?>
 
     <script type="text/javascript" src="../JS/menu.js"></script>
 
