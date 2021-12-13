@@ -46,11 +46,13 @@ include("session.php");
             <div class="container">
                 <?php
                  $i = $_GET['i'];
-                echo '<img src="../images/' . $i .'.jpg" alt="1" style="width:80%">';
-                ?>
+                echo '<img src="../images/' . $i .'.jpg" alt="1" style="width:80%">
+                
             </div>
             <div class="container">
-                <img src="../images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
+                
+                <img src="../images/Filmes/' . $i . '.jpg" alt="PF_cover" width="150px" height="auto">';
+                ?>
                 <div class="container-information">
                     <?php 
                         $i = $_GET['i'];
@@ -112,8 +114,7 @@ include("session.php");
                         );
                             echo '<h3>Sinopse</h3>
                             <h4>' . $sinopse[$i] . '</h4>
-                            <h3>Elenco</h3>
-                            <img src="../images/' . $i .'.jpg" alt="1" style="width:100px">';
+                            <h3>Elenco</h3>';
                             for($j = 2; $j < 5; $j++){
                                 echo '<h4>' . $filme[$j] . '</h4> ';
                             }

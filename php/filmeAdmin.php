@@ -44,13 +44,15 @@ include("session.php");
 
         <div class="filme-grid">
             <div class="container">
-                <?php
+            <?php
                  $i = $_GET['i'];
-                echo '<img src="../images/' . $i .'.jpg" alt="1" style="width:80%">';
-                ?>
+                echo '<img src="../images/' . $i .'.jpg" alt="1" style="width:80%">
+                
             </div>
             <div class="container">
-                <img src="../images/PF_cover.jpg" alt="PF_cover" width="150px" height="auto">
+                
+                <img src="../images/Filmes/' . $i . '.jpg" alt="PF_cover" width="150px" height="auto">';
+                ?>
                 <div class="container-information">
                     <?php 
                         $i = $_GET['i'];
@@ -68,22 +70,6 @@ include("session.php");
                         }
                         else{
                             echo '<h3><b>' . $filme[5] . '€</b></h3>';
-                        }
-                        
-                        $rows= pg_query("select * from clientes where username='". $_SESSION['username'] . "'");
-                        $clientes = pg_fetch_row($rows);
-                        $numColumns = pg_num_fields($rows);
-                        $comprado = 0;
-                        for ($j = 0; $j < $numColumns; $j++) {
-                            if($clientes[$j]!=$filme[0]){
-                                $comprado = 0;
-                            }
-                            else{
-                                $comprado=1;
-                            }
-                        }
-                        if($comprado==0){
-                            echo '<button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>';
                         }
                         
                         echo '</div>
@@ -109,8 +95,7 @@ include("session.php");
                         );
                             echo '<h3>Sinopse</h3>
                             <h4>' . $sinopse[$i] . '</h4>
-                            <h3>Elenco</h3>
-                            <img src="../images/' . $i .'.jpg" alt="1" style="width:100px">';
+                            <h3>Elenco</h3>';
                             for($j = 2; $j < 5; $j++){
                                 echo '<h4>' . $filme[$j] . '</h4> ';
                             }
