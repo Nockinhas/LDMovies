@@ -29,12 +29,23 @@
         }
     } else {
 ?>
-    <form  class="form" method="POST">
-    <h1 class="login-title">Registration</h1>
-        <input type="text" id="username" name="username" placeholder="Usename" required><br>
-        <input type="password" id="password" name="password" placeholder="Password"><br>
-        <button formaction="registration.php" class="btnRegister" name="register">Register</button>
-    </form>
+        <div class="login">
+                <div class="login-grid">
+                    <div class="login-container">
+                        <h1>LDMovies</h1>
+                    </div>
+                    <div class="login-container">
+                    <div class="login-container-form">
+                    <form  class="form" method="POST">
+                        <h3 class="login-title">Registration</h3>
+                        <input type="text" id="username" name="username" placeholder="Usename" required><br>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                        <button formaction="registration.php" class="btnRegister" name="register">Register</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 <?php
     }
     exit();
