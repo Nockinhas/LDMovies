@@ -50,8 +50,8 @@
                     <div class="login-container-form">
                         <h3>Bem vindo ao LDMovies</h3>
                         <form method="POST">
-                            <input type="text" id="username" name="username" placeholder="Usename"><br>
-                            <input type="password" id="password" name="password" placeholder="Password"><br>
+                            <input type="text" id="username" name="username" placeholder="Usename" required><br>
+                            <input type="password" id="password" name="password" placeholder="Password" required><br>
                             <button type="submit" class="btnLogin" name="login">Login</button>
                         </form>
                     </div>
