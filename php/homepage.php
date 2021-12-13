@@ -26,10 +26,37 @@ include("session.php");
               <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             <a class="logo" href="/homepage.php">LDMovies</a>
             <div class="barra_de_pesquisa">
+            <form name="searching">
                 <input type="text" name="search" alt="search" class="search">
-                <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
+                <img type="submit" src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
+            </form>
             </div>
             <img src="../images/Icons/notification.png" alt="notification" class="notification" width="25px" height="auto">
+            
+            <?php
+                require('baseDados.php');
+                if(isset($_GET['search'])) {
+                    $search = $_GET['search'];
+                    $query = "SELECT * FROM filmes";
+                    $resultados = pg_query($connection, $query);
+                    $numFilmes = pg_num_rows($resultados);
+
+                    
+                    for($i = 0; $i < $numFilmes; $i++){ //vai ver todos os filmes
+                        $resultados= pg_query($connection,"select * from filmes where id='". $i ."'");
+                        $filmeColumn = pg_fetch_row($resultados);
+                            if($filmeColumn[0] == $search || $filmeColumn[2] == $search || $filmeColumn[3] == $search || $filmeColumn[4] == $search){
+                                echo '<div class="card">
+                                    <div class="card-information">
+                                    <img src="../images/' . $i .'.jpg" alt="1" style="width:200px" onclick="filme(' . $i . ')" value="' . $i . '">
+                                    <h3>' . $filmeColumn[0] . '</h3>
+                                    </div>
+                                </div>';
+                        }
+                    }
+            }
+            ?>
+            
             
             <!-- TRES PONTINHOS -->
             <div id="myOps" class="optionsnav">
@@ -53,7 +80,7 @@ include("session.php");
 
         <div class="homepage-grid">
 
-                <?php
+        <?php
                     require('baseDados.php');
                     $query = "SELECT * FROM filmes";
                     $resultados = pg_query($connection, $query);
@@ -102,9 +129,9 @@ include("session.php");
                     $todosTitulos = pg_fetch_all($resultados);
                     sort($todosTitulos);
 
-                    echo 'titulos: ' . json_encode($todosTitulos);
+                    /* echo 'titulos: ' . json_encode($todosTitulos);
 
-                    echo '<br>';echo '<br>';echo '<br>';
+                    echo '<br>';echo '<br>';echo '<br>'; */
 
                     /* ORDEM POR ANO */
                 
@@ -113,7 +140,7 @@ include("session.php");
                     $todosAnos = pg_fetch_all($resultados);
                     sort($todosAnos);
                     
-                    echo 'anos: ' . json_encode($todosAnos);
+                    /* echo 'anos: ' . json_encode($todosAnos); */
                 ?>
         </div>
     </div>
