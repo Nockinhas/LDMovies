@@ -218,20 +218,16 @@ include("session.php");
         } else {
     ?>
 
-    <div class="form-popup" id="OrdemForm">
-        <form action="homepageAdmin.php" method="POST" class="form-container">
-        <h2>Ordenar por:</h2>
+        <div class="form-popup" id="OrdemForm">
+            <form action="homepage.php" method="POST" class="form-container">
+                <h2>Ordenar por:</h2>
 
-        <label><b>Titulo</b></label>
-        <input type="text" placeholder="Enter Titulo" name="tituloOrdem">
+                <input type="button" class="btnForm" name="tituloOrdem" value="Título">
+                <input type="button" class="btnForm" name="anoOrdem" value="Ano">
 
-        <label><b>Ano</b></label>
-        <input type="number" min="1900" max="2099" step="1" value="2021" name="anoOrdem">
-
-        <button type="submit" class="btnForm">Submeter</button>
-        <button type="button" class="btnForm cancel" onclick="closeOrdem()">Cancelar</button>
-        </form>
-    </div>
+                <button type="button" class="btnForm cancel" onclick="closeOrdem()">Cancelar</button>
+            </form>
+        </div>
     <?php
         }
     ?>
