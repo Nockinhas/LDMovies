@@ -195,7 +195,7 @@ include("session.php");
 
     <div class="form-popup" id="RemoveForm">
         <form action="homepageAdmin.php" method="POST" class="form-container">
-            <h2>Remove um Filme ;-;</h2>
+            <h2>Remove um Filme</h2>
 
             <label><b>Titulo</b></label>
             <input type="text" placeholder="Enter Titulo" name="tituloRF" required>
