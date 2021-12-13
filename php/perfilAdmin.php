@@ -34,12 +34,12 @@ include("session.php");
             <!-- Menu -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="homepage.php">Home</a>
-                <a href="perfil.php">Perfil</a>
+                <a href="homepageAdmin.php">Home</a>
+                <a href="perfilAdmin.php">Perfil</a>
             </div>
 
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logo" href="homepage.php">LDMovies</a>
+            <a class="logo" href="homepageAdmin.php">LDMovies</a>
             <div class="barra_de_pesquisa">
                 <input type="text" name="search" alt="search" class="search">
                 <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
@@ -79,7 +79,7 @@ include("session.php");
             <!-- POPUP CARREGAR -->
 
             <div class="form-popup" id="CarregarSaldoForm">
-                <form action="perfil.php" method="POST" class="form-container">
+                <form action="perfilAdmin.php" method="POST" class="form-container">
                     <h2>Montante:</h2>
                     <input type="number" id="montante" name="montante"><br>
 
@@ -106,7 +106,7 @@ include("session.php");
             <button class="BtnsGerais" onclick="openTransferencia()">Efectuar transferência</button>
 
             <div class="form-popup" id="TransferenciaForm">
-                <form action="perfil.php" method="POST" class="form-container">
+                <form action="perfilAdmin.php" method="POST" class="form-container">
                     <label for="utilizador">Escolha o utilizador destinatário:</label>
                     <select name="utilizador" id="utilizadores">';
                     for($i=0; $i < $lista; $i++){
@@ -155,7 +155,7 @@ include("session.php");
             ?>
         </div>
     </div>
-    <script type="text/javascript" src="../JS/menu.js"></script>
+    <script type="text/javascript" src="../JS/menuAdmin.js"></script>
 
     <!-- POPUPs SCRIPT -->
 
