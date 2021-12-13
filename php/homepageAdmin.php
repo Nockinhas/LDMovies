@@ -25,12 +25,12 @@ include("session.php");
             <!-- Menu -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="homepage.php">Home</a>
-                <a href="perfil.php">Perfil</a>
+                <a href="homepageAdmin.php">Home</a>
+                <a href="perfilAdmin.php">Perfil</a>
             </div>
 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logo" href="/homepage.php">LDMovies</a>
+            <a class="logo" href="homepageAdmin.php">LDMovies</a>
             <div class="barra_de_pesquisa">
                 <input type="text" name="search" alt="search" class="search">
                 <img src="../images/Icons/lupa.png" name="lupa" alt="lupa" class="lupa" width="20px" height="auto">
@@ -241,7 +241,7 @@ include("session.php");
 
 
 
-    <script type="text/javascript" src="../JS/menu.js"></script>
+    <script type="text/javascript" src="../JS/menuAdmin.js"></script>
 
     <!-- POPUPs SCRIPT -->
     
