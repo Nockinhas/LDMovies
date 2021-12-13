@@ -40,24 +40,24 @@
         else{
 
         ?>
-    
-            <div class="login">
-        <div class="login-grid">
-            <div class="login-container">
-                <h1>LDMovies</h1>
-            </div>
-            <div class="login-container">
-                <div class="login-container-form">
-                    <h3>Bem vindo ao LDMovies</h3>
-                    <form method="POST">
-                        <input type="text" id="username" name="username" placeholder="Usename"><br>
-                        <input type="password" id="password" name="password" placeholder="Password"><br>
-                        <button type="submit" class="btnLogin" name="login">Login</button>
-                    </form>
+     
+        <div class="login">
+            <div class="login-grid">
+                <div class="login-container">
+                    <h1>LDMovies</h1>
+                </div>
+                <div class="login-container">
+                    <div class="login-container-form">
+                        <h3>Bem vindo ao LDMovies</h3>
+                        <form method="POST">
+                            <input type="text" id="username" name="username" placeholder="Usename"><br>
+                            <input type="password" id="password" name="password" placeholder="Password"><br>
+                            <button type="submit" class="btnLogin" name="login">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <?php 
         }
