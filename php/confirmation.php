@@ -33,7 +33,6 @@ include("session.php");
         }
     $saldo = $saldo - $preço;
     $rows= pg_query("update clientes set saldo='$saldo' where username='". $_SESSION["username"] ."'");
-    echo 'Compra efetuada com sucesso!';
     echo "<div>
             <h3>Compra efetuada com sucesso!</h3><br/>
             <p class='link'>Click here to return to <a href='homepage.php'>Homepage</a></p>

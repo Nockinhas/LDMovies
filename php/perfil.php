@@ -60,7 +60,7 @@ include("session.php");
         </div>
 
             <img src="../images/Icons/perfil.png" alt="perfil" class="perfil-image" width="50px" height="auto">
-            <h2 class="perfil-BemVindo">Bem Vindo <?php echo $_SESSION["username"] ?></h2>
+            <h2 class="perfil-BemVindo">Bem Vindo: <?php echo $_SESSION["username"] ?></h2>
             <h3 class="perfil-saldo">Saldo atual:<b>
                     <?php 
                         require('baseDados.php');
@@ -146,11 +146,18 @@ include("session.php");
 
             <?php
             require('baseDados.php');
-            $rows= pg_query("select * from clientes where username='". $_SESSION['username'] . "'");
+            $rows= pg_query("select * from clientes where username='" . $_SESSION['username'] . "'");
             $clientes = pg_fetch_row($rows);
             $numFilmes = pg_num_fields($rows);
+            $rows= pg_query("select * from filmes");
+            $filmes = pg_fetch_all_columns($rows);
+            $totalFilmes = pg_num_fields($rows);
             for($i = 3; $i < $numFilmes; $i++){
-            echo '<img src="../images/Filmes/' . $i . '_cover.jpg" width="auto" height="150px">';
+                for($j = 0; $j < $totalFilmes; $j++){
+                    if($clientes[$i]==$filmes[$j]){
+                        echo '<img src="../images/' . $j . '.jpg" width="auto" height="150px">';
+                    }
+                }
             }
             ?>
         </div>

@@ -85,6 +85,9 @@ include("session.php");
                         if($comprado==0){
                             echo '<button type="button" onclick="comprar(' . $i . ')" value="' . $i . '">Comprar</button>';
                         }
+                        else{
+                            echo '<h3>Comprado!</h3>';
+                        }
                         
                         echo '</div>
                         </div>
