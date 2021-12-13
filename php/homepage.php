@@ -126,6 +126,9 @@ include("session.php");
     ?>
 
     <script type="text/javascript" src="../JS/menu.js"></script>
+
+    <!-- POPUPs SCRIPT -->
+    
     <script>
         function openOrdem() {
             document.getElementById("OrdemForm").style.display = "block";

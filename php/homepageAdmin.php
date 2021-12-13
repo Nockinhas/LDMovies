@@ -242,6 +242,9 @@ include("session.php");
 
 
     <script type="text/javascript" src="../JS/menu.js"></script>
+
+    <!-- POPUPs SCRIPT -->
+    
     <script>
         function openAddForm() {
         document.getElementById("AddForm").style.display = "block";

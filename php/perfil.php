@@ -70,121 +70,23 @@ include("session.php");
                     ?>
                 €</b>
             </h3>
-           <!--  <h3 class="perfil-transferências">Transferências</h3> -->
 
-        <!-- <div class="perfil-grid">
-            <div class="perfil-grid-container">
-                <h4 class="remetente">Remetente</h4>
-                <p class="remetente-username">username2</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="destinatario">Destinatário</h4>
-                <p class="destinatario-username">username</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="montante">Montante</h4>
-                <p class="montante-valor">+5€</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="saldo">Saldo</h4>
-                <p class="saldo-valor">10,55€</p>
-            </div> <div class="perfil-grid-container">
-                <h4 class="data">Data</h4>
-                <p class="data-valor">10-11-2021</p>
-            </div>
-            
-            <div class="perfil-grid-container">
-                <h4 class="remetente">Remetente</h4>
-                <p class="remetente-username">username2</p>
-                <hr>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="destinatario">Destinatário</h4>
-                <p class="destinatario-username">username</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="montante">Montante</h4>
-                <p class="montante-valor">-3€</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="saldo">Saldo</h4>
-                <p class="saldo-valor">5,55€</p>
-            </div> <div class="perfil-grid-container">
-                <h4 class="data">Data</h4>
-                <p class="data-valor">08-11-2021</p>
-            </div>
-            
-            <div class="perfil-grid-container">
-                <h4 class="filme">Filme</h4>
-                <p class="filme-nome">Pulp Fiction</p>
-                <hr>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="preço">Valor</h4>
-                <p class="preço-valor">-1,50€</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="desconto">Desconto</h4>
-                <p class="desconto-valor">60%</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="saldo">Saldo</h4>
-                <p class="saldo-valor">8,55€</p>
-            </div> <div class="perfil-grid-container">
-                <h4 class="data">Data</h4>
-                <p class="data-valor">05-22-2021</p>
-            </div>
 
-            <div class="perfil-grid-container">
-                <h4 class="filme">Filme</h4>
-                <p class="filme-nome">KILLBILL</p>
-                <hr>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="preço">Valor</h4>
-                <p class="preço-valor">-2€</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="desconto">Desconto</h4>
-                <p class="desconto-valor">nenhum</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="saldo">Saldo</h4>
-                <p class="saldo-valor">9,05€</p>
-            </div> <div class="perfil-grid-container">
-                <h4 class="data">Data</h4>
-                <p class="data-valor">22-10-2021</p>
-            </div>
-
-            <div class="perfil-grid-container">
-                <h4 class="filme">Filme</h4>
-                <p class="filme-nome">Sacanas sem Lei</p>
-                <hr>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="preço">Valor</h4>
-                <p class="preço-valor">-2,55€</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="desconto">Desconto</h4>
-                <p class="desconto-valor">nenhum</p>
-            </div>
-            <div class="perfil-grid-container">
-                <h4 class="saldo">Saldo</h4>
-                <p class="saldo-valor">7,05€</p>
-            </div> <div class="perfil-grid-container">
-                <h4 class="data">Data</h4>
-                <p class="data-valor">03-10-2021</p>
-            </div>
-        </div> -->
         <div class="perfil-definiçoes">
         <h3 class="definiçoes">Definições da conta</h3>
-            <p class="carregar">Carregar Saldo</p>
-            <form method="POST">
-                <p>Montante:</p>
-                <input type="number" id="montante" name="montante"><br>
-                <button type="submit" class="btnConfirmar" name="confirmar">Confirmar</button>
-            </form>
+            <button class="BtnsGerais" class="carregar" onclick="openCarregar()">Carregar Saldo</button>
+
+            <!-- POPUP CARREGAR -->
+
+            <div class="form-popup" id="CarregarSaldoForm">
+                <form action="perfil.php" method="POST" class="form-container">
+                    <h2>Montante:</h2>
+                    <input type="number" id="montante" name="montante"><br>
+
+                    <button type="submit" class="btnConfirmar btnForm" name="confirmar">Confirmar</button>
+                    <button type="button" class="btnForm cancel" onclick="closeCarregar()">Cancelar</button>
+                </form>
+            </div>
             <?php
             if(isset($_POST['montante'])){
             echo '<p> Carregamento concluído com sucesso! </p>
@@ -197,23 +99,33 @@ include("session.php");
             $rows= pg_query("SELECT username FROM clientes");
             $clientes = pg_fetch_all_columns($rows);
             $lista = pg_num_rows($rows);
-            echo '<p class="transferir">Efectuar transferência</p>
-            <form method="POST">
-                <label for="utilizador">Escolha o utilizador destinatário:</label>
-                <select name="utilizador" id="utilizadores">';
-                for($i=0; $i < $lista; $i++){
-                    if($clientes[$i] != $_SESSION["username"]){
-                    echo '<option value="' . $clientes[$i] . '">' . $clientes[$i]  . '</option>';
+
+            /* POPUP TRANSFERENCIAS */
+
+            echo '
+            <button class="BtnsGerais" onclick="openTransferencia()">Efectuar transferência</button>
+
+            <div class="form-popup" id="TransferenciaForm">
+                <form method="POST" class="form-container">
+                    <label for="utilizador">Escolha o utilizador destinatário:</label>
+                    <select name="utilizador" id="utilizadores">';
+                    for($i=0; $i < $lista; $i++){
+                        if($clientes[$i] != $_SESSION["username"]){
+                        echo '<option value="' . $clientes[$i] . '">' . $clientes[$i]  . '</option>';
+                        }
                     }
-                }
-                echo '</select>
-                <p>Montante:</p>';
-                $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
-                $saldo = pg_fetch_result($rows, 0, 0);
-                echo '<input type="number" id="montante2" name="montante2"><br>
-                <br><br>
-                <button type="submit" class="btnConfirmar" name="confirmar">Confirmar</button>
-            </form>';
+                    echo '</select>
+                    <br><br>
+                    <p>Montante:</p>';
+                    $rows= pg_query("select saldo from clientes where username='". $_SESSION["username"] ."'");
+                    $saldo = pg_fetch_result($rows, 0, 0);
+                    echo '<input type="number" id="montante2" name="montante2"><br>
+                    <br><br>
+                    <button type="submit" class="btnConfirmar btnForm" name="confirmar">Confirmar</button>
+                    <button type="button" class="btnForm cancel" onclick="closeTransferencia()">Cancelar</button>
+                </form>
+            </div>
+                ';
             if(isset($_POST['montante2']) && isset($_POST['utilizador'])){
                 if($saldo - $_POST['montante2'] >= 0){
                     $saldo = $saldo - $_POST['montante2'];
@@ -244,5 +156,25 @@ include("session.php");
         </div>
     </div>
     <script type="text/javascript" src="../JS/menu.js"></script>
+
+    <!-- POPUPs SCRIPT -->
+
+    <script>
+        function openCarregar() {
+            document.getElementById("CarregarSaldoForm").style.display = "block";
+        }
+
+        function closeCarregar() {
+            document.getElementById("CarregarSaldoForm").style.display = "none";
+        }
+
+        function openTransferencia() {
+            document.getElementById("TransferenciaForm").style.display = "block";
+        }
+
+        function closeTransferencia() {
+            document.getElementById("TransferenciaForm").style.display = "none";
+        }
+    </script>
 </body>
 </html>
